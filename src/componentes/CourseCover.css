@@ -1,0 +1,19 @@
+.course-cover {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 32px;
+    border-radius: 16px;
+    background: #f5f7fb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+}
+
+.course-cover__title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.course-cover__text {
+    margin-bottom: 12px;
+}
