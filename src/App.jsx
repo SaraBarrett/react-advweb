@@ -4,17 +4,18 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 import CourseCover from "./componentes/CourseCover";
+import APISection from "./componentes/APISection";
+import LearningForm from "./componentes/LearningForm";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-    
       <CourseCover
         courseName="Advanced Web"
         professor="José Moreira"
-      students={["Fathia Onifade", "Sara Monteiro"]}
+        students={["Fathia Onifade", "Sara Monteiro"]}
         masterProgram="Master's in Web Engineering and Technologies"
       />
       <section id="center">
@@ -23,12 +24,12 @@ function App() {
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
-        <div>
+        {/* <div>
           <h1>Get started</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
-        </div>
+        </div> */}
         <button
           type="button"
           className="counter"
@@ -38,6 +39,11 @@ function App() {
         </button>
       </section>
       <div className="ticks"></div>
+
+      <section id="next-steps">
+        <APISection />
+        <LearningForm />
+      </section>
       <section id="next-steps">
         <div id="docs">
           <svg className="icon" role="presentation" aria-hidden="true">

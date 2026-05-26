@@ -1,0 +1,16 @@
+.weather-demo {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.weather-demo h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.weather-demo .error {
+  color: #ef4444;
+}
