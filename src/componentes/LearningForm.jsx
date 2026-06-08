@@ -6,7 +6,7 @@ function LearningForm() {
   const [formData, setFormData] = useState({
     framework: "",
     level: "beginner", // beginner / intermediate / advanced
-    since: "",         // year when started learning
+    since: "", // year when started learning
   });
 
   // State to store validation errors for each field
@@ -45,7 +45,12 @@ function LearningForm() {
 
     // Validate "since" as a valid year
     const year = parseInt(formData.since);
-    if (!formData.since || !year || year < 1990 || year > new Date().getFullYear()) {
+    if (
+      !formData.since ||
+      !year ||
+      year < 1990 ||
+      year > new Date().getFullYear()
+    ) {
       newErrors.since = "Please enter a valid year.";
     }
 
@@ -100,7 +105,9 @@ function LearningForm() {
               placeholder="e.g. React, Vue, Angular"
               aria-invalid={!!errors.framework}
             />
-            {errors.framework && <span className="error">{errors.framework}</span>}
+            {errors.framework && (
+              <span className="error">{errors.framework}</span>
+            )}
           </div>
 
           <div className="form-group">
@@ -119,18 +126,25 @@ function LearningForm() {
 
           <div className="form-group">
             <label htmlFor="since">Started learning (year)</label>
-            <input
-              type="number"
+            <select
               id="since"
               name="since"
               value={formData.since}
               onChange={handleChange}
-              placeholder="e.g. 2024"
               aria-invalid={!!errors.since}
-            />
+            >
+              <option value="">Select a year</option>
+              {Array.from({ length: 10 }, (_, index) => {
+                const year = new Date().getFullYear() - index;
+                return (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                );
+              })}
+            </select>
             {errors.since && <span className="error">{errors.since}</span>}
           </div>
-
           <button type="submit">Insert learning</button>
         </form>
       )}
