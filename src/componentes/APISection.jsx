@@ -24,7 +24,7 @@ function APISection() {
         const data = await response.json();
         setWeather(data);
       } catch (err) {
-        // Mock para aula
+        // Mock for class
         setWeather({
           weather: [
             { temperature: 18, precipitation: 0 },
